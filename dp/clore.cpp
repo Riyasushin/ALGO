@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+/// pointer 有i种音符最多情况下能开到的区间的上一个值
 int dp[50006], pointer[1000], notes[50006], n, m;
 bool vis[50006];
 
