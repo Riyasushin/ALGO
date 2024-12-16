@@ -31,7 +31,8 @@ void addEdge(int u, int v) {
     to[edge] = v;
 }
 bool visited[MAXS] = {};
-void f2(int u) {
+/// 统计词频
+void f(int u) {
 
     int r = 0;
     box[r++] = u;
@@ -73,6 +74,7 @@ void insert(const int i, string str) {
 //
 
 void setFail() {
+    /// bfs
     int l = 0, r = 0;
     for (int i = 0; i <= 25; ++i) {
         if (tree[0][i] > 0) {
@@ -85,6 +87,7 @@ void setFail() {
             if (tree[u][i] == 0) {
                 tree[u][i] = tree[fail[u]][i];
             } else {
+                /// 父节点设置孩子的fail
                 fail[tree[u][i]] = tree[fail[u]][i];
                 box[r++] = tree[u][i]; /// ??
             }
@@ -118,7 +121,7 @@ int main() {
         addEdge(fail[i], i);
     }
 
-    f2(0);
+    f(0);
 
     for (int i = 1; i <= n; ++i) {
         cout << times[Ends[i]] << endl;
