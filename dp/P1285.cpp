@@ -34,7 +34,6 @@ int main() {
     }
 
     double maxx = -1;
-
     for (int i = 1; i <= sum / 2; ++i) {
         for (int j = sum / 2; j > 0; --j) {
             if (dp[i][j] == 1 && i + j > sum - i - j) {
@@ -46,5 +45,4 @@ int main() {
     cout << (maxx == -1 ? -1 : (long long) (maxx * 100)) << endl;
 
     return 0;
-
 }
